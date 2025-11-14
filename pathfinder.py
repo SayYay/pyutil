@@ -15,9 +15,9 @@ import pathlib
 
 """ Function defenition """
 def scan_files(
-        dir: str | pathlib.WindowsPath,
+        dir: str | pathlib.Path,
         extensions: list[str],
-        recursive: bool=False) -> list[pathlib.WindowsPath]:
+        recursive: bool=False) -> list[pathlib.Path]:
     """Scan file paths of specific filename extensions.
 
     This function scans paths of file which has specific
@@ -26,13 +26,13 @@ def scan_files(
     You can scan paths recursively if recursive=True.
 
     Args:
-        dir(str or WindowsPath): Target directory.
+        dir(str or Path): Target directory.
         extensions(list of str): Filename extension WITHOUT PERIOD.
                                 ("JPG"=OK, ".JPG"=WRONG)
         recursive(bool): Scan recursively if True. Default=False.
 
     Returns:
-        list[WindowsPath]: List of all file paths.
+        list[Path]: List of all file paths.
 
     Example:
         If you want to scan CSV files in a single directory, then write like below
@@ -56,8 +56,8 @@ def scan_files(
 
 
 def scan_dirs(
-        dir: str | pathlib.WindowsPath,
-        recursive: bool=False) -> list[pathlib.WindowsPath]:
+        dir: str | pathlib.Path,
+        recursive: bool=False) -> list[pathlib.Path]:
     """Scan paths of directories.
 
     This function scans subordinate directories,
@@ -65,11 +65,11 @@ def scan_dirs(
     You can scan paths recursively if recursive=True.
 
     Args:
-        dir (str or WindowsPath): Target directory.
+        dir (str or Path): Target directory.
         recursive (bool): Scan recursively if True. Default=False.
 
     Returns:
-        list[WindowsPath]: List of all paths.
+        list[Path]: List of all paths.
 
     Example:
         If you want to scan all subordinate directories, write like below
@@ -89,9 +89,9 @@ def scan_dirs(
 
 
 def scan_items(
-        dir: str | pathlib.WindowsPath,
+        dir: str | pathlib.Path,
         extensions: list[str]=["*"],
-        recursive: bool=False) -> list[pathlib.WindowsPath]:
+        recursive: bool=False) -> list[pathlib.Path]:
     """Scan file and directory paths.
 
     This function scans paths of file and directory paths.
@@ -99,13 +99,13 @@ def scan_items(
     You can scan paths recursively if recursive=True.
 
     Args:
-        dir (str | pathlib.WindowsPath): Target directory.
+        dir (str | pathlib.Path): Target directory.
         extensions (list[str], optional): Filename extension WITHOUT PERIOD. Defaults to None.
                                             ("JPG"=OK, ".JPG"=WRONG)
         recursive (bool, optional): Scan recursively if True. Defaults to False.
 
     Returns:
-        list[pathlib.WindowsPath]: List of all file paths.
+        list[pathlib.Path]: List of all file paths.
 
     Example:
         If you want to scan CSV files in a single directory, then write like below

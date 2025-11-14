@@ -43,7 +43,7 @@ def main():
     # Find all files to discard
     target_files = []
     for dir in target_dirs:
-        target_files_per_dir = pf.scan_files(dir, extension)
+        target_files_per_dir = pf.scan_files(dir, [extension])
         target_files += target_files_per_dir
     if not target_files:
         print("Not file found!")
