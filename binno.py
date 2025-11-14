@@ -27,11 +27,12 @@ def exit_with_wait():
 
 
 def main():
-    # Current directory setup when executed by D&D
+    # Set current directory in case of drag & drop execution
     os.chdir(pathlib.Path(sys.argv[0]).parent)
 
     # Get target from arguments
     if len(sys.argv) == 1:
+        target_dirs = []
         exit_with_wait()
     else:
         target_dirs = sys.argv[1:]
@@ -51,7 +52,7 @@ def main():
     # Show targets and user confirmation
     for target_file in target_files:
         print("  *", target_file.name)
-    confirmation = input("Are you sure to send those files to trash? [y/n] -> ")
+    confirmation = input("Are you sure to send those files to trash? [y/N] -> ")
 
     # Send to trash
     if str(confirmation).upper() == 'Y':
